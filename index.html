@@ -5,8 +5,35 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>移动版Twitter</title>
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="MyApp">
-移动版Twitter
+<!-- 导航 -->
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="tabs tabs-transparent">
+        <li class="tab"><a ng-class="{ active: isActive('#!/')}" href="#!/"><i class="material-icons">store</i></a></li>
+        <li class="tab"><a ng-class="{ active: isActive('#!/search')}" href="#!/search"><i class="material-icons">search</i></a></li>
+        <li class="tab"><a ng-class="{ active: isActive('#!/notifications')}" href="#!/notifications"><i class="material-icons">add_alert</i></a></li>
+        <li class="tab"><a ng-class="{ active: isActive('#!/messages')}" href="#!/messages"><i class="material-icons">textsms</i></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- 推文 -->
+<main>
+  <div ng-view></div>
+  <a class="btn btn-floating btn-large cyan write-tweet"><i class="material-icons">edit</i></a>
+</main>
+
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<!-- <script src="js/angular-touch.min.js"></script> -->
+
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
